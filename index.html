@@ -416,6 +416,102 @@
 
     .lane-icon { font-size: 1.9rem; margin-bottom: 16px; display: block; }
 
+    /* DETAIL HERO (stats section) */
+    .detail-hero-wrap {
+      border-top: 1px solid var(--border);
+    }
+
+    .detail-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 64px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .detail-hero h2 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+
+    .accent-line {
+      display: block;
+      color: var(--accent-bright);
+    }
+
+    .detail-hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 460px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+
+    .btn-ghost {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--text); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .hero-stat {
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card-bg);
+      transition: border-color 0.3s;
+    }
+    .hero-stat:hover { border-color: var(--accent-glow); }
+
+    .hero-stat:first-child {
+      grid-column: span 2;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px;
+      background: var(--stat-big-bg);
+      border-color: var(--stat-big-border);
+    }
+
+    .hero-stat-big {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .hero-stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .hero-stat-num {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+      letter-spacing: -0.02em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
     /* WHAT WE BUILD */
     .features {
       padding: 80px 64px;
@@ -614,6 +710,7 @@
       nav { padding: 18px 24px; }
       .hero { padding: 72px 24px 52px; }
       .lanes { grid-template-columns: 1fr; padding: 0 24px 72px; }
+      .detail-hero { grid-template-columns: 1fr; padding: 80px 24px 60px; gap: 40px; }
       .features { padding: 60px 24px; }
       .features-list { grid-template-columns: 1fr; }
       .why { padding: 60px 24px; }
@@ -726,8 +823,44 @@
 
   </div>
 
+  <!-- DETAIL HERO WITH STATS -->
+  <div class="detail-hero-wrap" id="what-we-build">
+    <div class="detail-hero">
+      <div>
+        <h2>
+          Your business<br />
+          runs on tasks.<br />
+          <span class="accent-line">Let AI handle them.</span>
+        </h2>
+        <p class="detail-hero-sub">
+          We build AI agents, automated workflows, and custom tools —
+          so your team spends time on what matters, while AI handles everything else.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Let's talk</a>
+          <a href="#features" class="btn-ghost">See what we build →</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-big">$400K+</div>
+          <div class="hero-stat-label">equivalent work automated per year for a 6-person team</div>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">3,200</span>
+          <span class="hero-stat-label">hours reclaimed annually</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">6 → 15</span>
+          <span class="hero-stat-label">team output without new hires</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- WHAT WE BUILD -->
-  <div class="features" id="what-we-build">
+  <div class="features" id="features">
     <div class="features-header">
       <p class="section-kicker">What we build</p>
       <h2>The full stack,<br />deployed for your business</h2>
@@ -758,7 +891,7 @@
   </div>
 
   <!-- WHY IT WORKS -->
-  <div class="why">
+  <div class="why" id="why">
     <div class="why-inner">
       <div class="why-text">
         <p class="section-kicker">Why it works</p>
